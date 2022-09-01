@@ -1,12 +1,16 @@
 #!/usr/bin/python3
+# 100-weight_average.py
+# Brennan D Baraban <375@holbertonschool.com>
+
+
 def weight_average(my_list=[]):
-    if my_list:
-        w_a = 0.0
-        divs = 0
-        divd = 0
-        for i in my_list:
-            divd += i[0] * i[1]
-            divs += i[1]
-        w_a = divd / divs
-        return w_a
-    return (0)
+    """Return the weighted average of all integers in a list of tuples."""
+    if not isinstance(my_list, list) or len(my_list) == 0:
+        return (0)
+
+    avg = 0
+    size = 0
+    for tup in my_list:
+        avg += (tup[0] * tup[1])
+        size += tup[1]
+    return (avg / size)
